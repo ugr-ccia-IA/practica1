@@ -1,4 +1,4 @@
-# Práctica 1 de *Inteligencia Artificial*, curso 2022/2023
+# Práctica 1 de *Inteligencia Artificial*, curso 2023/2024
 
 
 ## Prerrequisitos
