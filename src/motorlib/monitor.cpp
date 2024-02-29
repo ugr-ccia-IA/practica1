@@ -159,7 +159,11 @@ void MonitorJuego::inicializar(int pos_fila, int pos_col, int bruj, int seed)
     } while ((celdaRand == 'P') or (celdaRand == 'M') or (getMapa()->entidadEnCelda(pos_fila, pos_col) != '_'));
   }
 
+  Orientacion paDonde;
+
+
   if ((nivel == 1 or nivel == 2) and bruj != norte and bruj != -1){
+    paDonde = static_cast<Orientacion>(bruj);
     cout << "Se cambió la orientación inicial del agente a Norte. Orientación inicial obligatoria en este nivel.\n";
     bruj = norte;
   }
@@ -167,14 +171,16 @@ void MonitorJuego::inicializar(int pos_fila, int pos_col, int bruj, int seed)
     bruj = rand() % 8;
   }
 
-  if (nivel == 3 and bruj%2 !=0){
-    cout << "Se cambió la orientación inicial del agente de " << get_entidad(0)->stringOrientacion(static_cast<Orientacion>(bruj));
-    bruj = (bruj +1)%2;
-    cout << " a " << get_entidad(0)->stringOrientacion(static_cast<Orientacion>(bruj)) << ". Orientación inicial en este nivel no podía ser en diagonal.\n";
+  if (nivel == 3 and (bruj%2 !=0) ){
+    paDonde = static_cast<Orientacion>(bruj);
+    bruj = (bruj +1)%8;
   }
 
   nueva_entidad(new Entidad(jugador, jugador_, static_cast<Orientacion>(bruj), pos_fila, pos_col, new Jugador3D(""), new ComportamientoJugador(getMapa()->getNFils()), 3000));
 
+  if (nivel == 3 and paDonde != bruj){
+    cout << "Se fijó la orientación inicial a " << get_entidad(0)->stringOrientacion(static_cast<Orientacion>(bruj)) << "." << endl;
+  }
  
   // Para el nivel 2 genero los aldeanos y los lobos
   if (nivel >= 2)
