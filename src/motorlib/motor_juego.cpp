@@ -134,7 +134,7 @@ bool actuacionJugador(unsigned char celda_inicial, unsigned char celda_fin, Acti
   case actRUN:
     posibleElAvance = monitor.getMapa()->EsPosibleCorrer(0, 2);
 
-    cout << "actRUN: " << posibleElAvance << endl;
+    //cout << "actRUN: " << posibleElAvance << endl;
 
     if (posibleElAvance != 0)
     { // No se ha podido avanzar.
