@@ -48,7 +48,7 @@ int main(int argc, char ** argv) {
     lanzar_motor_grafico(argc, argv);
   }
   else {
-    srand(atoi(argv[1]));
+    // srand(atoi(argv[1])); 
     argumentos.ubicacion_mapa = argv[1];
     if (!fileExists(argumentos.ubicacion_mapa)){
       std::cout << "El mapa no existe\n";

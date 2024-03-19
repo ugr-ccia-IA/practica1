@@ -136,7 +136,7 @@ void MonitorJuego::decPasos()
 void MonitorJuego::inicializar(int pos_fila, int pos_col, int bruj, int seed)
 {
   clear(); // Elimina el verctor de entidades
-  srand(seed);
+  srand(seed); // OK
   int tama = getMapa()->getNCols();
 
   // Si es la primera vez que se llama se fija el numero de lobos y aldeanos al 10 % del numero de columnas
@@ -215,7 +215,7 @@ void MonitorJuego::inicializar(int pos_fila, int pos_col, int bruj, int seed)
 
   get_entidad(0)->setVision(getMapa()->vision(0));
 
-  srand(seed);
+  srand(seed); // OK?
 }
 
 double MonitorJuego::CoincidenciaConElMapa()

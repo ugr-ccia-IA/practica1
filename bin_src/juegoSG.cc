@@ -49,8 +49,8 @@ int main(int argc, char ** argv){
        }
      }
 
-    monitor.inicializar(atoi(argv[4]), atoi(argv[5]), atoi(argv[2]));
-    monitor.get_entidad(0)->setOrientacion(static_cast<Orientacion>(atoi(argv[6])));
+    monitor.inicializar(atoi(argv[4]), atoi(argv[5]), atoi(argv[6]), atoi(argv[2]));
+
     monitor.get_entidad(0)->setBateria(5000);
     monitor.get_entidad(0)->Cogio_Bikini(false);
     monitor.get_entidad(0)->Cogio_Zapatillas(false);

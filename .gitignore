@@ -8,3 +8,9 @@ cmake_install.cmake
 build/
 Makefile
 .vscode
+.cmake/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+.DS_Store
+compile_commands.json
